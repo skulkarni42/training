@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><title>Login
+</title>
+<body>
+
+<h1>Login Page</h1>
+<div id="loginForm" >
+<form novalidate>
+    
+
+   <div id="div1">
+      <label for="uname" ><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" id="userName"></div>
+     <br>
+     <div id="div2"> <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="password" ></div>
+        
+      <button type="button" onclick="validate()">Login</button>
+     
+    </div>
+
+   
+  </form>
+</div>
+<script>
+
+function validate() {
+
+  var msg = document.getElementById("errorMsg");
+  if(msg != null){
+  	  document.getElementById('userName').removeAttribute("style");
+ 
+  	msg.remove();
+  }
+  
+  var userName = document.getElementById('userName').value;
+  var pwd = document.getElementById('password').value;
+  if(userName == ""){
+  	var para = document.createElement('p');
+  	para.setAttribute("id", "errorMsg");
+    var val = document.createTextNode("Please enter value");
+
+    para.appendChild(val);
+    var element = document.getElementById("div1");
+
+   element.appendChild(para);
+   document.getElementById('userName').style.borderColor = "red";
+   
+   document.getElementById('errorMsg').style.color="red";
+  }
+
+
+}
+</script>
+
+</body>
+</html>
